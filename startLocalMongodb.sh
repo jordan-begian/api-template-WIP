@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Creates a local instance of a mongo database within a docker container so that database integration and interaction
+# can be tested while developing
+
 # Check if the container is already running
 if docker ps --filter "name=local-mongo" --format '{{.Names}}' | grep -q "local-mongo"; then
   echo "Stopping existing container..."
