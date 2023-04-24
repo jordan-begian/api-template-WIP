@@ -10,4 +10,8 @@ class ProjectService(
     private val projectRepository: ProjectRepository
 ) {
     fun submitRequest(request: ProjectData): Mono<ProjectData> = projectRepository.submit(request)
+
+    fun retrieveAll(): Mono<List<ProjectData>> = projectRepository.retrieveAll()
+
+    fun retrieveById(id: String): Mono<ProjectData> = projectRepository.retrieveById(id)
 }
